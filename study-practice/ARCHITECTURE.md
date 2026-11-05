@@ -16,3 +16,5 @@ This is a staged migration. The course chooser is `index.html`. Each course page
 The CS 3345 route handler delegates chapter and topic hashes to `ChapterNavigation.restore`; existing hashes continue through `showSection`. New directory links call `StudyGuide.open`, `MCPractice.openTopics`, or `showSection` without changing their grading logic. Topic-specific Java links call `JavaReference.show` and `JavaReference.setView`, keeping the seven original listings and 55 code questions in their existing controller. The standalone Java Reference destination remains available until browser verification confirms the topic links.
 
 Current verification is static: source copy integrity, script syntax, asset paths, CS 4341's source validation, and CS 3345 topic coverage. Browser visual and interaction checks remain outstanding because the browser tool blocks the local `file://` page.
+
+Fresh combined-site progress is isolated by `study-practice:cs3345:` and `study-practice:cs4341:` storage prefixes. The CS 3345 adapter wraps its existing reads and writes; the CS 4341 controller uses its existing `PREFIX` mechanism. Historical local-file progress is not migrated.
