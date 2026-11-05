@@ -1,0 +1,30 @@
+// Physical one-based page map from the 61-page 4341studyguide.pdf.
+// Each populated topic uses two original guide pages, rendered to assets/reference/page-NNN.png.
+window.REFERENCE_PAGES={
+  'ch1-number-systems':[3,4],
+  'ch1-logic-levels':[5,6],
+  'ch2-boolean':[7,8],
+  'ch2-kmap':[9,10],
+  'ch2-mux':[11,12],
+  'ch3-storage':[13,14],
+  'ch3-fsm':[15,16],
+  'ch3-timing':[17,18],
+  'ch5-alu':[19,20],
+  'ch5-float':[21,22],
+  'ch5-arrays':[23,24],
+  'ch6-mips':[25,26],
+  'ch6-endian':[27,28],
+  'ch6-encoding':[29,30],
+  'ch6-logic':[31,32],
+  'ch6-control':[33,34],
+  'ch6-arrays':[35,36],
+  'ch6-functions':[37,38],
+  'ch6-addressing':[39,40],
+  'ch7-performance':[41,42],
+  'ch7-datapath':[43,44],
+  'ch7-critical-path':[45,46],
+  'ch7-multicycle':[47,48],
+  'ch7-pipeline':[49,50],
+  'ch7-hazards':[51,52],
+  'ch7-control-hazards':[53,54]
+};
