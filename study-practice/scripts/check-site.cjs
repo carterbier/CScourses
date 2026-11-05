@@ -3,6 +3,8 @@ const path = require('path');
 const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
+const entry = fs.readFileSync(path.resolve(root, '../index.html'), 'utf8');
+if (!entry.includes('study-practice/index.html')) throw Error('Repository root does not lead to course selector');
 let checked = 0;
 function checkPage(file) {
   const html = fs.readFileSync(file, 'utf8');
