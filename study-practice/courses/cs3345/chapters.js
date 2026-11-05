@@ -64,7 +64,7 @@ const ChapterNavigation = (() => {
 
   function route(kind, id) {
     const hash = '#' + kind + '/' + encodeURIComponent(id);
-    if (window.location.hash !== hash) history.pushState(null, '', hash);
+    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
     restore(kind + '/' + id);
     window.scrollTo(0, 0);
   }

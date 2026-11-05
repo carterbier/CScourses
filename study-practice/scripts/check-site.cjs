@@ -35,6 +35,16 @@ const b = fs.readFileSync(path.join(root, 'courses/cs4341/app.js'), 'utf8');
 if (!a.includes('study-practice:cs3345:') || !b.includes('study-practice:cs4341:')) throw Error('Course storage namespaces missing');
 const questions = fs.readFileSync(path.join(root, 'courses/cs3345/questions.js'), 'utf8');
 const chapters = fs.readFileSync(path.join(root, 'courses/cs3345/chapters.js'), 'utf8');
+const routeSource = chapters.match(/  function route\(kind, id\) \{[\s\S]*?\n  \}/)?.[0];
+if (!routeSource) throw Error('CS 3345 chapter route missing');
+const pushed = [];
+const route = vm.runInNewContext(`(${routeSource})`, {
+  history: [], // Original exercise undo state shadows the browser global.
+  window: {location: {hash: ''}, history: {pushState: (...args) => pushed.push(args)}, scrollTo: () => {}},
+  restore: value => pushed.push(value)
+});
+route('chapter', 'ch6');
+if (pushed.length !== 2 || pushed[0][2] !== '#chapter/ch6' || pushed[1] !== 'chapter/ch6') throw Error('CS 3345 chapter link does not navigate');
 const extract = (source, name, ending) => {
   const match = source.match(new RegExp(`const ${name} = (.*?);${ending}`, 's'));
   if (!match) throw Error(`Missing ${name}`);
