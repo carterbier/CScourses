@@ -9,6 +9,7 @@ This is a staged migration. The course chooser is `index.html`. Each course page
 | `shared/navigation.js` and `shared/navigation.css` | Clickable site title and course links in both existing drawers |
 | `shared/components.css` | Shared palette, header, button, panel, input, MCQ, feedback, and directory styles |
 | `courses/cs3345/index.html` | Course markup and remaining inline controllers; `showSection` still controls the existing routes |
+| `courses/cs3345/course.css` and `course-practice.css`, `course-mcq.css`, `course-repair.css`, `course-mobile.css` | The 38 original style blocks grouped at their original cascade positions; specialized layout styles remain with CS 3345 |
 | `courses/cs3345/exercises.js` | The six original contiguous exercise scripts in their original order: heap, sorting, graph, lab, and shared exercise controllers |
 | `courses/cs3345/questions.js` | Syllabus MCQ, Java reference, encoding, and independent MCQ controllers plus the original question banks |
 | `courses/cs3345/study-guide.js` | Original Study Guide JSON data, reader, and topic-link controller |

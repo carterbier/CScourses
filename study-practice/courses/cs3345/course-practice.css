@@ -1,0 +1,70 @@
+
+#mcPracticeSection h1{font-size:26px;margin:8px 0 12px}.mc-toolbar,.mc-actions,.mc-quiz-head,.mc-topic-top,.mc-progress-line,.mc-progress-manage{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.mc-toolbar{justify-content:space-between;margin:8px 0 14px}.mc-status{color:#d1d1d1;font-size:13px}.mc-topics{display:grid;gap:7px}.mc-topic{background:#292929;border:1px solid #484848;border-radius:8px;padding:11px 13px}.mc-topic-top{justify-content:space-between}.mc-topic-name{font-weight:700}.mc-topic-meta{color:#d1d1d1;font-size:12px}.mc-bar{height:6px;background:#171717;border-radius:6px;overflow:hidden;flex:1;min-width:90px}.mc-bar span{display:block;height:100%;background:#81b69a}.mc-row-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.mc-row-actions button,.mc-actions button,.mc-toolbar button{padding:7px 10px}.mc-quiz-head{justify-content:space-between;margin:8px 0}.mc-nav{display:flex;gap:5px;flex-wrap:wrap;margin:12px 0}.mc-nav button{min-width:34px;padding:6px}.mc-nav button.current{outline:2px solid #94cdb0}.mc-question,.mc-review-item,.mc-stat-box{background:#292929;border:1px solid #484848;border-radius:8px;padding:15px;margin:10px 0}.mc-stem{line-height:1.55}.mc-code{white-space:pre-wrap;background:#171717;padding:10px;border-radius:6px;overflow:auto}.mc-choice{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid #626262;border-radius:7px;margin:7px 0;cursor:pointer;line-height:1.45}.mc-choice:has(input:checked){border-color:#d0e5d8;background:#343c37}.mc-choice input{margin-top:3px}.mc-choice.correct{border-color:#64ad7a;background:#183a25}.mc-choice.wrong{border-color:#d87878;background:#421f22}.mc-feedback{padding:8px 10px;border-radius:6px}.mc-correct{color:#a8e0b5}.mc-incorrect{color:#ffaaaa}.mc-explanation{border-left:3px solid #d87878;padding-left:12px;margin-top:10px}.mc-muted{color:#ccc}.mc-progress-manage{margin:18px 0;border-top:1px solid #484848;padding-top:12px}.mc-error{color:#ffaaaa;white-space:pre-wrap}.mc-topic details{margin-top:8px}.mc-topic summary,.mc-review-item summary{cursor:pointer}.mc-inline-code{font-family:monospace;background:#1b1b1b;padding:1px 4px;border-radius:3px}.mc-review-table{width:100%;border-collapse:collapse}.mc-review-table th,.mc-review-table td{text-align:left;padding:7px;border-bottom:1px solid #484848}.mc-review-actions{display:flex;gap:8px;margin:18px 0}
+@media(max-width:600px){.mc-topic-top{align-items:flex-start}.mc-progress-line{width:100%}.mc-review-table{font-size:12px}}
+
+
+#mcPracticeSection .mc-intro{margin:0 0 9px;color:#d1d1d1;font-size:13px}
+#mcPracticeSection .mc-how{margin:0 0 12px;color:#d1d1d1;font-size:12px}
+#mcPracticeSection .mc-how summary{width:max-content;cursor:pointer;color:#e2e2e2}
+#mcPracticeSection .mc-how ul{margin:7px 0 0;padding-left:20px;line-height:1.6}
+#mcPracticeSection .mc-topics{display:flex;flex-direction:column;gap:0;overflow:hidden;border:1px solid #494949;border-radius:9px;background:#2f2f2f}
+#mcPracticeSection .mc-topic{margin:0;padding:0;border:0;border-bottom:1px solid #494949;border-radius:0;background:transparent}
+#mcPracticeSection .mc-topic:last-child{border-bottom:0}
+#mcPracticeSection .mc-topic-row{display:flex;width:100%;min-width:0;flex-direction:column;align-items:stretch;gap:4px;padding:9px 13px;border:0;border-radius:0;background:#2f2f2f;color:#f0f0f0;text-align:left;box-shadow:none}
+#mcPracticeSection .mc-topic-row:disabled{cursor:not-allowed;background:#2f2f2f;color:#c2c2c2;opacity:1}
+#mcPracticeSection .mc-topic-row:not(:disabled):hover{background:#383838}
+#mcPracticeSection .mc-topic-row:focus-visible{position:relative;z-index:1;outline:3px solid #91b9a0;outline-offset:-3px}
+#mcPracticeSection .mc-topic-title-line{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#mcPracticeSection .mc-topic-name{font-size:14px;font-weight:650;line-height:1.3}
+#mcPracticeSection .mc-topic-meta{color:#c9c9c9;font-size:12px;font-weight:400;line-height:1.4}
+#mcPracticeSection .mc-topic-row:disabled .mc-topic-meta{color:#b8b8b8}
+#mcPracticeSection .mc-progress{display:block;width:100%;height:3px;margin-top:3px;overflow:hidden;border-radius:4px;background:#171717}
+#mcPracticeSection .mc-progress span{display:block;height:100%;border-radius:inherit;background:#81b69a}
+#mcPracticeSection .mc-topic-tools{padding:5px 13px 8px;border-top:1px solid #414141;background:#292929}
+#mcPracticeSection .mc-topic-tools summary{width:max-content;cursor:pointer;color:#d1d1d1;font-size:11px}
+#mcPracticeSection .mc-topic-tools button{margin:5px 6px 0 0;padding:5px 8px;font-size:11px}
+@media(max-width:600px){#mcPracticeSection .mc-topic-row{padding:9px 10px}#mcPracticeSection .mc-topic-title-line{align-items:center;flex-direction:row;gap:4px}#mcPracticeSection .mc-topic-meta{font-size:11px}}
+
+
+/* Complete Sort keeps the editable array and its interactive heap together. */
+#heapsortSection .sp-heap-complete-workspace{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr);gap:12px;align-items:start;width:100%;min-width:0}
+#heapsortSection .sp-heap-complete-workspace:not(.has-tree){grid-template-columns:minmax(0,1fr)}
+#heapsortSection .sp-heap-complete-array,#heapsortSection .sp-heap-complete-tree{min-width:0;max-width:100%}
+#heapsortSection .sp-heap-complete-array .sort-array{justify-content:flex-start;min-width:0}
+#heapsortSection .sp-heap-complete-tree{padding:5px;border:1px solid #454545;border-radius:8px;background:#292929}
+#heapsortSection .sp-heap-complete-tree .sp-tree{display:flex;justify-content:center;width:100%;min-width:0;max-width:100%;max-height:360px!important;overflow:auto!important;overscroll-behavior:contain;margin:0;background:transparent}
+#heapsortSection .sp-heap-complete-tree .sp-tree-stage{flex:0 0 auto;max-width:none!important;margin-inline:auto}
+#heapsortSection .sp-heap-complete-tree .sp-dot{touch-action:none}
+@media(max-width:780px){#heapsortSection .sp-heap-complete-workspace.has-tree{grid-template-columns:minmax(0,1fr)}#heapsortSection .sp-heap-complete-tree{width:min(100%,620px);justify-self:center}#heapsortSection .sp-heap-complete-tree .sp-tree{max-height:320px!important}}
+
+
+#mcPracticeSection .mc-page-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+#mcPracticeSection .mc-page-heading h1{min-width:0}
+#mcPracticeSection .mc-transfer-tools,#mcPracticeSection .mc-transfer-group{display:flex;align-items:center;gap:5px}
+#mcPracticeSection .mc-transfer-tools{flex:0 0 auto}
+#mcPracticeSection .mc-transfer-button{display:grid;place-items:center;width:32px;height:32px;padding:5px;border:1px solid #565656;border-radius:6px;background:#292929;color:#e5e5e5;cursor:pointer}
+#mcPracticeSection .mc-transfer-button svg{width:18px;height:18px}
+#mcPracticeSection .mc-transfer-button:hover{background:#3a3a3a;border-color:#777}
+#mcPracticeSection .mc-transfer-button:focus-visible{outline:3px solid #91b9a0;outline-offset:2px}
+#mcPracticeSection .mc-transfer-error{max-width:130px;color:#ffaaaa;font-size:10px;line-height:1.3;overflow-wrap:anywhere}
+@media(max-width:480px){#mcPracticeSection .mc-page-heading{gap:6px}#mcPracticeSection .mc-page-heading h1{font-size:21px}#mcPracticeSection .mc-transfer-button{width:30px;height:30px}#mcPracticeSection .mc-transfer-error{max-width:85px}}
+#mcPracticeSection .mc-topic-statistics{padding:7px 12px 11px}
+#mcPracticeSection .mc-topic-statistics>summary{font-size:11px;color:#e1e1e1}
+#mcPracticeSection .mc-stat-section{margin-top:9px;padding-top:8px;border-top:1px solid #454545}
+#mcPracticeSection .mc-stat-section h4{margin:0 0 6px;font-size:12px;color:#f0f0f0}
+#mcPracticeSection .mc-stat-section h5{margin:8px 0 5px;font-size:11px;color:#d9d9d9}
+#mcPracticeSection .mc-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+#mcPracticeSection .mc-stat-cell{display:flex;min-width:0;flex-direction:column;gap:2px;padding:6px 8px;border:1px solid #454545;border-radius:6px;background:#242424}
+#mcPracticeSection .mc-stat-cell strong{font-size:13px;color:#f0f0f0;font-variant-numeric:tabular-nums}
+#mcPracticeSection .mc-stat-cell span,#mcPracticeSection .mc-stat-note{font-size:10px;line-height:1.45;color:#c9c9c9}
+#mcPracticeSection .mc-stat-note{margin:5px 0}
+#mcPracticeSection .mc-missed-list{display:grid;gap:4px}
+#mcPracticeSection .mc-missed-item{padding:5px 7px;border:1px solid #454545;border-radius:6px;background:#242424}
+#mcPracticeSection .mc-missed-item summary{font-size:11px;line-height:1.45;color:#ededed;cursor:pointer;overflow-wrap:anywhere}
+#mcPracticeSection .mc-missed-detail{padding:5px 2px 0;font-size:11px;overflow-wrap:anywhere}
+#mcPracticeSection .mc-missed-question{margin-top:4px;line-height:1.5}
+#mcPracticeSection .mc-show-all,#mcPracticeSection .mc-report-link,#mcPracticeSection .mc-reset-topic{margin:5px 5px 0 0;padding:5px 8px;font-size:10px}
+#mcPracticeSection .mc-history-round{margin:5px 0 8px;padding-left:8px;border-left:2px solid #494949}
+#mcPracticeSection .mc-history-round>strong{font-size:10px;color:#d9d9d9}
+#mcPracticeSection .mc-history-row{margin:3px 0;font-size:10px;line-height:1.4;color:#d0d0d0;overflow-wrap:anywhere}
+#mcPracticeSection .mc-stat-definitions{margin-top:5px;font-size:10px;color:#c9c9c9}#mcPracticeSection .mc-stat-definitions summary{width:max-content;cursor:pointer;color:#d9d9d9}#mcPracticeSection .mc-stat-definitions ul{margin:4px 0 0;padding-left:18px;line-height:1.45}#mcPracticeSection .mc-attempt-history,#mcPracticeSection .mc-version-history{display:grid;gap:3px;margin-top:7px;padding-top:6px;border-top:1px solid #3f3f3f}#mcPracticeSection .mc-attempt-history>strong,#mcPracticeSection .mc-version-history>strong{font-size:10px;color:#e0e0e0}#mcPracticeSection .mc-attempt-list{display:flex;flex-wrap:wrap;gap:3px 10px;margin:2px 0;padding-left:16px;color:#d0d0d0;font-size:10px;line-height:1.5}#mcPracticeSection .mc-missed-detail>p{line-height:1.45}@media(max-width:900px){#mcPracticeSection .mc-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){#mcPracticeSection .mc-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#mcPracticeSection .mc-topic-statistics{padding-inline:8px}}
