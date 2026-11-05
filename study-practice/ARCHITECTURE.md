@@ -14,7 +14,7 @@ This is a staged migration. The course chooser is `index.html`. Each course page
 | `courses/cs3345/questions.js` | Syllabus MCQ, Java reference, encoding, and independent MCQ controllers plus the original question banks |
 | `courses/cs3345/study-guide.js` | Original Study Guide JSON data, reader, and topic-link controller |
 | `courses/cs3345/storage.js`, `navigation.js`, `display.js`, and `route.js` | Course storage namespace, original drawer, text repair, and route restoration |
-| `courses/cs3345/chapters.js` | Chapter and topic directory, topic links into existing controllers, and `#chapter/<id>` / `#topic/<id>` routes |
+| `courses/cs3345/chapters.js` | Chapter and topic directory, persistent topic/mode toolbar, links into existing controllers, and `#chapter/<id>` / `#topic/<id>` routes |
 | `courses/cs3345/TOPIC-MAP.md` | Development mapping of all content streams to textbook chapters |
 | `courses/cs4341/index.html`, `course.css`, `app.js`, and `bootstrap.js` | Course markup, original styling, chapter and exercise controller, and initialization |
 | `courses/cs4341/assets/`, `reference-pages.js`, and `generated/banks.js` | Original K-map, reference, navigation, refinement, and question assets |

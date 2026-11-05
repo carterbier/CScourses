@@ -101,6 +101,10 @@
 .sp-course .sp-java-reference-entry strong { flex: 1 1 180px; }
 .sp-course .sp-java-reference-entry button { min-height: 38px; border: 1px solid #666; border-radius: 8px; background: var(--sp-control); color: var(--sp-text); font-size: 13px; }
 .sp-course .sp-java-reference-entry button:hover { border-color: #929292; background: var(--sp-hover); }
+.sp-course .sp-topic-toolbar:not([hidden]) { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; width: min(100%, 1120px); margin: 12px auto 4px; padding: 9px 12px; border: 1px solid #454545; border-radius: 10px; background: var(--sp-panel); }
+.sp-course .sp-topic-toolbar .sp-back-button { margin: 0; }
+.sp-course .sp-topic-toolbar select { flex: 1 1 220px; min-height: 40px; min-width: 0; }
+.sp-course .sp-topic-toolbar button { min-height: 40px; }
 @media (max-width: 780px) {
   .sp-course .sp-topic-choices { grid-template-columns: 1fr; }
   .sp-course .sp-topic-choices .sp-directory-card { min-height: 140px; }

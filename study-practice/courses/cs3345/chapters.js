@@ -37,6 +37,17 @@ const ChapterNavigation = (() => {
   };
   const home = document.getElementById('homeSection');
   const main = home.parentElement;
+  const toolbar = document.createElement('nav');
+  toolbar.className = 'sp-topic-toolbar';
+  toolbar.setAttribute('aria-label', 'Current topic navigation');
+  toolbar.hidden = true;
+  main.prepend(toolbar);
+  let currentTopic = null;
+  const originalShowSection = showSection;
+  showSection = function(section, ...args) {
+    originalShowSection(section, ...args);
+    toolbar.hidden = !currentTopic || ['home', 'chapter', 'interactivePractice'].includes(section);
+  };
   const chapterPage = document.createElement('section');
   chapterPage.id = 'cs3345ChapterSection';
   chapterPage.className = 'sp-directory';
@@ -75,6 +86,7 @@ const ChapterNavigation = (() => {
     home.append(grid);
   }
   function showChapter(chapter) {
+    currentTopic = null;
     chapterPage.replaceChildren();
     chapterPage.append(button('← Chapters', () => route('home', ''), 'sp-back-button'));
     chapterPage.append(make('p', 'sp-directory-eyebrow', 'CHAPTER ' + chapter.id.slice(2)));
@@ -86,6 +98,20 @@ const ChapterNavigation = (() => {
   }
   function showTopic(chapter, topic) {
     const [id, title, guide, exercise] = topic;
+    currentTopic = id;
+    toolbar.replaceChildren();
+    toolbar.append(button('← Topic', () => route('topic', id), 'sp-back-button'));
+    const selector = document.createElement('select');
+    selector.setAttribute('aria-label', 'Switch topic');
+    chapters.forEach(group => group.topics.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item[0];
+      option.textContent = 'Ch. ' + group.id.slice(2) + ' · ' + item[1];
+      selector.append(option);
+    }));
+    selector.value = id;
+    selector.addEventListener('change', () => route('topic', selector.value));
+    toolbar.append(selector);
     topicPage.replaceChildren();
     topicPage.append(button('← ' + chapter.title, () => route('chapter', chapter.id), 'sp-back-button'));
     topicPage.append(make('p', 'sp-directory-eyebrow', 'CHAPTER ' + chapter.id.slice(2)));
@@ -98,15 +124,23 @@ const ChapterNavigation = (() => {
       else card.append(make('p', 'sp-directory-unavailable', 'No material in this section yet.'));
       choices.append(card);
     }
-    choice('Study Guide', 'Read the topic explanation and worked examples.', guide ? () => StudyGuide.open(guide) : null);
-    choice('Multiple Choice', 'Practice this topic and review your progress.', () => {
+    const openGuide = guide ? () => StudyGuide.open(guide) : null;
+    const openMCQ = () => {
       MCPractice.openTopics();
       showSection('mcPractice');
       const index = Q2_MCQ_DATA.topics.findIndex(item => item[0] === id);
       const row = document.querySelectorAll('#mcPracticeSection .mc-topic-row')[index];
       if (row) requestAnimationFrame(() => { row.scrollIntoView({ block: 'center' }); row.focus({ preventScroll: true }); });
-    });
-    choice('Problem Solving', 'Work through the original interactive exercises.', exercise ? () => showSection(exercise) : null);
+    };
+    const openExercise = exercise ? () => showSection(exercise) : null;
+    choice('Study Guide', 'Read the topic explanation and worked examples.', openGuide);
+    choice('Multiple Choice', 'Practice this topic and review your progress.', openMCQ);
+    choice('Problem Solving', 'Work through the original interactive exercises.', openExercise);
+    for (const [label, action] of [['Study Guide', openGuide], ['Multiple Choice', openMCQ], ['Problem Solving', openExercise]]) {
+      const control = button(label, action || (() => {}));
+      control.disabled = !action;
+      toolbar.append(control);
+    }
     topicPage.append(choices);
     if (javaByTopic[id]) {
       const references = make('section', 'sp-java-references');
@@ -127,7 +161,7 @@ const ChapterNavigation = (() => {
     showSection('topic', false);
   }
   function restore(hash = window.location.hash.slice(1)) {
-    if (hash === 'home/' || hash === 'home') { showSection('home', false); return true; }
+    if (hash === 'home/' || hash === 'home') { currentTopic = null; showSection('home', false); return true; }
     const [kind, encoded] = hash.split('/');
     let id;
     try { id = decodeURIComponent(encoded || ''); } catch { return false; }
