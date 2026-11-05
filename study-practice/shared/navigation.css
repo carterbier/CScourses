@@ -1,0 +1,39 @@
+.sp-site-title {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 36px;
+  margin-right: 12px;
+  padding-right: 12px;
+  border-right: 1px solid #555;
+  color: #f5f5f5;
+  font: 700 15px/1.2 "Segoe UI", Arial, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sp-site-title:hover { color: #a4dcc8; }
+.sp-site-title:focus-visible,
+.sp-course-link:focus-visible { outline: 2px solid #a4dcc8; outline-offset: 2px; }
+.sp-nav-label {
+  margin: 16px 10px 5px;
+  color: #b4b4b4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sp-course-link {
+  display: block;
+  margin: 3px 4px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #f5f5f5;
+  font-size: 14px;
+  text-decoration: none;
+}
+.sp-course-link:hover,
+.sp-course-link[aria-current="page"] { border-color: #238568; background: #293a34; }
+@media (max-width: 620px) {
+  .sp-site-title { margin-right: 8px; padding-right: 8px; font-size: 12px; }
+}

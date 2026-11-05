@@ -548,7 +548,7 @@ main :is(button,select):hover:not(:disabled){border-color:#8A8A8A}
 @media(max-width:360px){#mcPracticeSection :is(.mc-stat-grid,.mc-round-grid){grid-template-columns:minmax(0,1fr)}#interactivePracticeSection .topic-row{align-items:flex-start}.home-card{padding:11px}h1{overflow-wrap:break-word}}
 </style>
 <style>.sg-zoom .sg-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;background:#000b;cursor:zoom-out}.sg-zoom .sg-zoom-close{position:absolute;top:12px;right:12px;z-index:2;min-height:44px;background:#292929;color:#fff;border:1px solid #aaa}.sg-zoom img{max-height:84vh}</style>
-</head>
+<link rel="stylesheet" href="../../shared/navigation.css"></head>
 <body>
 <header id="siteHeader"><div class="header"><div class="header-start"><button id="globalNavToggle" class="global-nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="globalNavShell" aria-expanded="false" title="Open navigation menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><button class="brand" type="button" data-section="home" aria-label="CS 3345 — Cumulative Practice — Home">CS 3345 — Cumulative Practice</button></div></div></header>
 <div id="globalNavShell" class="global-nav-shell" hidden>
@@ -4875,7 +4875,7 @@ const StudyGuide=(()=>{
 <script id="q2-route-ready">
 (()=>{const restoreRoute=()=>showSection(window.location.hash.slice(1)||'home',false);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',restoreRoute,{once:true});else restoreRoute();window.addEventListener('pageshow',event=>{if(event.persisted)restoreRoute()});window.addEventListener('popstate',restoreRoute)})();
 </script>
-</body>
+<script src="../../shared/navigation.js" data-course="cs3345"></script></body>
 </html>
 
 
