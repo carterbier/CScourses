@@ -13,6 +13,6 @@ This is a staged migration. The course chooser is `index.html`. Each course page
 | `courses/cs3345/TOPIC-MAP.md` | Development mapping of all content streams to textbook chapters |
 | `courses/cs4341/index.html` and its local assets | Existing chapter, reference, MCQ, problem, K-map, and history behavior |
 
-The CS 3345 route handler delegates chapter and topic hashes to `ChapterNavigation.restore`; existing hashes continue through `showSection`. New directory links call `StudyGuide.open`, `MCPractice.openTopics`, or `showSection` without changing their grading logic. CS 3345 still has its standalone Java Reference destination until every listing and associated question is accessible in a topic-specific reference area.
+The CS 3345 route handler delegates chapter and topic hashes to `ChapterNavigation.restore`; existing hashes continue through `showSection`. New directory links call `StudyGuide.open`, `MCPractice.openTopics`, or `showSection` without changing their grading logic. Topic-specific Java links call `JavaReference.show` and `JavaReference.setView`, keeping the seven original listings and 55 code questions in their existing controller. The standalone Java Reference destination remains available until browser verification confirms the topic links.
 
 Current verification is static: source copy integrity, script syntax, asset paths, CS 4341's source validation, and CS 3345 topic coverage. Browser visual and interaction checks remain outstanding because the browser tool blocks the local `file://` page.

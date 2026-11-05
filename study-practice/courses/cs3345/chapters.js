@@ -29,6 +29,12 @@ const ChapterNavigation = (() => {
       ['flow', 'Network Flow', 'network-flow', 'flow'],
       ['prim', "Prim's Algorithm", 'prims-algorithm', 'prim'] ] }
   ];
+  const javaByTopic = {
+    binary: [['heap-insert', 'Heap Insert'], ['heap-constructor', 'Heap Constructor'], ['build-heap', 'BuildHeap']],
+    binomial: [['combine-trees', 'combineTrees']],
+    quicksort: [['quick-sort', 'Quicksort']],
+    topo: [['top-sort-simple', 'TopSort'], ['top-sort-queue', 'TopSort Queue']]
+  };
   const home = document.getElementById('homeSection');
   const main = home.parentElement;
   const chapterPage = document.createElement('section');
@@ -103,6 +109,22 @@ const ChapterNavigation = (() => {
     });
     choice('Problem Solving', 'Work through the original interactive exercises.', exercise ? () => showSection(exercise) : null);
     topicPage.append(choices);
+    if (javaByTopic[id]) {
+      const references = make('section', 'sp-java-references');
+      references.append(make('h2', '', 'Java code and questions'));
+      references.append(make('p', 'sp-directory-meta', 'Topic-specific listings, explanations, and code questions.'));
+      const links = make('div', 'sp-java-reference-links');
+      for (const [referenceId, label] of javaByTopic[id]) {
+        const entry = make('div', 'sp-java-reference-entry');
+        entry.append(make('strong', '', label));
+        const open = view => { showSection('javaReference'); JavaReference.show(referenceId); JavaReference.setView(view); };
+        entry.append(button('Code and explanation', () => open('reference')));
+        entry.append(button('Code questions', () => open('mcq')));
+        links.append(entry);
+      }
+      references.append(links);
+      topicPage.append(references);
+    }
     showSection('topic', false);
   }
   function restore(hash = window.location.hash.slice(1)) {
