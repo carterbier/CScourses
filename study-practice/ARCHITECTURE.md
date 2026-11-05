@@ -10,6 +10,7 @@ This is a staged migration. The course chooser is `index.html`. Each course page
 | `shared/components.css` | Shared palette, header, button, panel, input, MCQ, feedback, and directory styles |
 | `courses/cs3345/index.html` | Course markup, embedded banks and references, and remaining inline controllers; `showSection` still controls the existing routes |
 | `courses/cs3345/exercises.js` | The six original contiguous exercise scripts in their original order: heap, sorting, graph, lab, and shared exercise controllers |
+| `courses/cs3345/questions.js` | The four original contiguous syllabus MCQ and Java reference scripts, including their question banks and controllers |
 | `courses/cs3345/chapters.js` | Chapter and topic directory, topic links into existing controllers, and `#chapter/<id>` / `#topic/<id>` routes |
 | `courses/cs3345/TOPIC-MAP.md` | Development mapping of all content streams to textbook chapters |
 | `courses/cs4341/index.html` and its local assets | Existing chapter, reference, MCQ, problem, K-map, and history behavior |
