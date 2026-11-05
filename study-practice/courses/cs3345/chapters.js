@@ -102,8 +102,7 @@ const ChapterNavigation = (() => {
     choice('Multiple Choice', 'Practice this topic and review your progress.', () => {
       MCPractice.openTopics();
       showSection('mcPractice');
-      const bank = JSON.parse(document.getElementById('q2McqEmbeddedBank').textContent);
-      const index = bank.topics.findIndex(item => item[0] === id);
+      const index = Q2_MCQ_DATA.topics.findIndex(item => item[0] === id);
       const row = document.querySelectorAll('#mcPracticeSection .mc-topic-row')[index];
       if (row) requestAnimationFrame(() => { row.scrollIntoView({ block: 'center' }); row.focus({ preventScroll: true }); });
     });
