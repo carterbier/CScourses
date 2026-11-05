@@ -3985,7 +3985,7 @@ let activeSection='home';
 function showSection(section,updateHash=true,sortMode=null) {
  const sortingAliases={insertion:'insertion',mergeRecursive:'merge',mergeBottom:'merge',heap:'heapsort',heapSnapshots:'heapsort',quick:'quicksort'};
  if(section==='sorting')section=sortingAliases[sortMode]||'insertion';
- const ids={home:'homeSection',interactivePractice:'interactivePracticeSection',javaReference:'javaReferenceSection',mcPractice:'mcPracticeSection',studyGuide:'studyGuideSection',heaps:'heapSection',binomial:'binomialSection',binary:'binarySection',dheaps:'dheapSection',insertion:'insertionSection',merge:'mergeSection',heapsort:'heapsortSection',quicksort:'quicksortSection',prim:'primSection',topo:'topoSection',dijkstra:'dijkstraSection',flow:'flowSection',pert:'pertSection',shortest:'shortestSection',activity:'activitySection',bounds:'boundsSection',external:'externalSection',fundamentals:'fundamentalsSection'};
+ const ids={home:'homeSection',chapter:'cs3345ChapterSection',topic:'cs3345TopicSection',interactivePractice:'interactivePracticeSection',javaReference:'javaReferenceSection',mcPractice:'mcPracticeSection',studyGuide:'studyGuideSection',heaps:'heapSection',binomial:'binomialSection',binary:'binarySection',dheaps:'dheapSection',insertion:'insertionSection',merge:'mergeSection',heapsort:'heapsortSection',quicksort:'quicksortSection',prim:'primSection',topo:'topoSection',dijkstra:'dijkstraSection',flow:'flowSection',pert:'pertSection',shortest:'shortestSection',activity:'activitySection',bounds:'boundsSection',external:'externalSection',fundamentals:'fundamentalsSection'};
  if(!ids[section])section='home';
  endDrag();BQ.cancelDrag();BH.cancelDrag();DH.cancel();SortingLab.cancel();activeSection=section;
  $('siteHeader').hidden=false;document.querySelectorAll('main>section').forEach(el=>el.hidden=el.id!==ids[section]);document.title='CS 3345 — Cumulative Practice';
@@ -4873,9 +4873,9 @@ const StudyGuide=(()=>{
 </style>
 
 <script id="q2-route-ready">
-(()=>{const restoreRoute=()=>showSection(window.location.hash.slice(1)||'home',false);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',restoreRoute,{once:true});else restoreRoute();window.addEventListener('pageshow',event=>{if(event.persisted)restoreRoute()});window.addEventListener('popstate',restoreRoute)})();
+(()=>{const restoreRoute=()=>{const hash=window.location.hash.slice(1)||'home';if(!(typeof ChapterNavigation!=='undefined'&&ChapterNavigation.restore(hash)))showSection(hash,false)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',restoreRoute,{once:true});else restoreRoute();window.addEventListener('pageshow',event=>{if(event.persisted)restoreRoute()});window.addEventListener('popstate',restoreRoute)})();
 </script>
-<script src="../../shared/navigation.js" data-course="cs3345"></script></body>
+<script src="chapters.js"></script><script src="../../shared/navigation.js" data-course="cs3345"></script></body>
 </html>
 
 

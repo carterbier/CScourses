@@ -72,3 +72,33 @@
   .sp-course #siteHeader .header { padding-inline: 12px; }
   .sp-course header.top { padding-inline: 12px; }
 }
+
+/* Chapter and topic directory cards can be reused by either course. */
+.sp-course .sp-directory { width: min(100%, 1120px); margin: 0 auto; padding: 20px 0 42px; }
+.sp-course .sp-directory h1 { margin: 6px 0 10px; color: var(--sp-text); }
+.sp-course .sp-directory-eyebrow { margin: 0; color: #9bb7a6; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.sp-course .sp-directory-intro,
+.sp-course .sp-directory-meta { color: var(--sp-muted); font-size: 14px; }
+.sp-course .sp-directory-grid,
+.sp-course .sp-topic-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+.sp-course .sp-topic-choices { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sp-course .sp-directory-card { display: flex; min-width: 0; min-height: 190px; flex-direction: column; align-items: flex-start; padding: 20px; border: 1px solid #555; border-radius: 11px; background: var(--sp-panel); }
+.sp-course .sp-directory-card h2 { margin: 8px 0; color: var(--sp-text); font-size: 19px; }
+.sp-course .sp-directory-card .sp-directory-meta { margin: 0 0 18px; }
+.sp-course .sp-directory-card .sp-directory-button { margin-top: auto; }
+.sp-course .sp-directory-list { display: grid; gap: 9px; margin-top: 22px; }
+.sp-course .sp-directory-button,
+.sp-course .sp-back-button { min-height: 40px; padding: 9px 13px; border: 1px solid #666; border-radius: 8px; background: var(--sp-control); color: var(--sp-text); font-size: 14px; text-align: left; }
+.sp-course .sp-directory-button:hover,
+.sp-course .sp-back-button:hover { border-color: #929292; background: var(--sp-hover); }
+.sp-course .sp-directory-list .sp-directory-button { width: 100%; }
+.sp-course .sp-back-button { margin: 0 0 22px; }
+.sp-course .sp-directory-unavailable { margin-top: auto; color: var(--sp-muted); font-size: 13px; }
+@media (max-width: 780px) {
+  .sp-course .sp-topic-choices { grid-template-columns: 1fr; }
+  .sp-course .sp-topic-choices .sp-directory-card { min-height: 140px; }
+}
+@media (max-width: 620px) {
+  .sp-course .sp-directory-grid { grid-template-columns: 1fr; }
+  .sp-course .sp-directory-card { min-height: 160px; }
+}
