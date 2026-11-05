@@ -1,0 +1,1 @@
+drawHome();initializeNavigation();initializeHomeTransferTools();
