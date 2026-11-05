@@ -46,6 +46,6 @@ The seven entries below contain 55 Java reference questions in total. Preserve e
 
 1. Keep the three content lists independent; a topic may have only Study Guide or MCQ content.
 2. Map the existing interactive topic IDs to Chapter 6, 7, or 9 without changing their generators, modes, graders, seed formats, or saved state.
-3. Keep all seven Java entries and all 55 associated questions reachable before removing the standalone Java Reference destination.
+3. Keep all seven Java entries and all 55 associated questions reachable through their topic links. The standalone Java Reference menu entry was removed after the local inventory check; the detail controller remains in use.
 4. Preserve the current printed reading labels in the interface. The chapter grouping is metadata and does not revise the labels.
 5. Verify counts and IDs against the embedded banks after code is extracted.
